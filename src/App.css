@@ -36,3 +36,34 @@
     transform: rotate(360deg);
   }
 }
+.logo{
+  width: 3rem;
+  height: 2.5rem;
+  border-radius: 50%;
+}
+
+section {
+  color: fff;
+  text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
+  background-color: #b1afafb0;
+  height: 5px;
+
+}
+
+.contador {
+  background-color: antiquewhite;
+  width: fit-content;
+  margin: auto;
+  padding: 1 rem;
+  text-align: center;
+}
+
+.ColorContador {
+  background-color: black;
+  color: antiquewhite;
+}
+
+.cart {
+  width: 20px;
+}
+

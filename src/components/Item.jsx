@@ -3,7 +3,7 @@ import React from "react";
 const Item = ({ producto }) => {
   console.log("item", producto);
   return (
-    <div className="card" style={{ width: "18rem", margin: ".5rem" }}>
+    <div className="card" style={{ width: "12rem", margin: ".5rem" }}>
       <img
         src={producto.imagen}
         className="card-img-top"
