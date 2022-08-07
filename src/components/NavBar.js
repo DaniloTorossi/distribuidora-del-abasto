@@ -2,7 +2,7 @@ import React from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import { Outlet, Link } from "react-router-dom";
+import {Link } from "react-router-dom";
 import Contador from "./Contador";
 import image from "./image/carrito.svg";
 

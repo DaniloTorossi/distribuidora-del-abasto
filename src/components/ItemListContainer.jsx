@@ -5,6 +5,7 @@ import ItemList from "./ItemList";
 const datos = [
     {
     id: "01",
+    categoria:"Alimento para perros",
     nombre: "Criadores",
     descripcion: "21 Kg + 3 kg de Regalo",
     precio: 6.608,
@@ -13,6 +14,7 @@ const datos = [
 },
     {
     id: "02",
+    categoria:"Alimento para perros",
     nombre: "Royal Canin",
     descripcion: "15Kg",
     precio: 13.698,
@@ -21,6 +23,7 @@ const datos = [
 },
 {
     id: "03",
+    categoria:"Alimento para perros",
     nombre: "Dog Chow",
     descripcion: "Adultos Medianas Y Grandes 21kg + 3kg De Regalo",
     precio: "6.643",
@@ -29,6 +32,7 @@ const datos = [
     },
     {
     id: "04",
+    categoria:"Alimento para perros",
     nombre: "Mapu",
     descripcion: "Perro Adulto 15 Kg",
     precio: "5.766",
@@ -37,6 +41,7 @@ const datos = [
     },
     {
     id: "05",
+    categoria:"Alimento para perros",
     nombre: "Excellent",
     descripcion: "Adult Dog Raza Mediana Y Grande Smart 20kg +2kg Regalo",
     precio: "7.862",
