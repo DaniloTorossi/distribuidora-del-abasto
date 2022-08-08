@@ -5,21 +5,20 @@ import Productos from "./Productos/Productos";
 
 const ItemDetailContainer = () => {
   const [item, setItem] = useState([]);
-  console.log("item", item);
+  console.log("ItemDetailContainer", item);
   const { id } = useParams();
 
-  const obtenerDatos = new Promise((resolve, reject) => {
-    let condition = true;
-    setTimeout(() => {
-      if (condition) {
-        resolve(Productos);
-      } else {
-        reject("No se encuentra el producto deseado");
-      }
-    }, 2000);
-  });
-
   useEffect(() => {
+    const obtenerDatos = new Promise((resolve, reject) => {
+      let condition = true;
+      setTimeout(() => {
+        if (condition) {
+          resolve(Productos);
+        } else {
+          reject("No se encuentra el producto deseado");
+        }
+      }, 2000);
+    });
     obtenerDatos
       .then((res) => setItem(res))
       .catch((err) => console.log("Hubo un error: " + err));

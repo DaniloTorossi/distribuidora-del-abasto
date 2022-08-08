@@ -1,5 +1,5 @@
 const ItemDetail = ({ item }) => {
-  console.log("el item", item);
+  console.log("ItemDetail", item);
   return (
     <div
       style={{
