@@ -1,22 +1,21 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 
 const Item = ({ producto }) => {
-  console.log("item", producto);
   return (
-    <div className="card" style={{ width: "12rem", margin: ".5rem" }}>
+    <Link to={`/item/${producto.id}`}>
+    <div className="card" style={{ width: "10rem", margin: ".5rem", height:"100%" }}>
         <img
-          src={producto.imagen}
+          src={producto.Imagen}
           className="card-img-top"
-          alt={producto.nombre}
+          alt={producto.Nombre}
         />
         <div className="card-body">
-          <h5 className="card-title">{producto.nombre}</h5>
-          <p className="card-text">{producto.descripcion} </p>
-          <p className="card-text">${producto.precio} </p>
-          <p className="card-text">stock:{producto.stock} </p>
+          <h5 className="card-title">{producto.Nombre}</h5>
         </div>
     </div>
+  </Link>
   );
 };
 
