@@ -12,8 +12,8 @@ const CartWidget = () => {
   });
   return (
     <div>
-      <div className="itemsInCart">{itemsInCart}</div>
-      <img src={cart4} ClassName="cart" width={30} alt="CartWidget" />
+      <div className="cart-color">{itemsInCart}</div>
+      <img src={cart4} className="cart" width={30} alt="CartWidget" />
     </div>
   );
 };

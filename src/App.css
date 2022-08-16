@@ -64,7 +64,12 @@ section {
 }
 
 .cart {
-  background-color: white;
+  color: white;
+  background-color: orange;
+  border-radius:50%;
+}
+
+.cart-color {
   color: white;
 }
 

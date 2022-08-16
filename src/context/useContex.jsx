@@ -4,7 +4,7 @@ export const CartContex = createContext([]);
 
 export const CartProvider = ({ children }) => {
   const [items, setItems] = useState([]);
-  //ingresa al carrito <-- esta funcion no esta andando coresctamente
+  //ingresa al carrito <-- esta funcion no esta andando correctamente
   const isInCart = (id) => {
     const found = items.find((item) => item.id === id);
     return found;

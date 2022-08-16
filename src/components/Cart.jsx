@@ -12,7 +12,7 @@ const Cart = () => {
             <h5>
               {item.qty} {item.nombre}{" "}
             </h5>
-            <button type="button" className="btn btn-danger" onclick={() => removeItem(item.id)}>Borrar Producto</button>
+            <button type="button" className="btn btn-danger" onClick={() => removeItem(item.id)}>Borrar Producto</button>
           </div>
         ))}
       </div>
