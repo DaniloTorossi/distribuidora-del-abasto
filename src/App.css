@@ -64,6 +64,13 @@ section {
 }
 
 .cart {
-  width: 20px;
+  background-color: white;
+  color: white;
 }
 
+.cardItem{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}

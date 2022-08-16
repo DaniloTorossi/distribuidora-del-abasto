@@ -1,16 +1,23 @@
-const Cart = () => {
+import React, { useContext } from "react";
+import { CartContex } from "../context/useContex";
 
-return (   <div>
-         <>
-            <div className='bgCart'>
-                <p>No hay ningun producto agregado el carrito</p>
-                <img src='https://i.postimg.cc/7hWXnHTc/error.jpg' alt="cart empty" />
-            </div>
-        </>
-</div>);
-    
+const Cart = () => {
+  const { items, removeItem} = useContext(CartContex);
+  return (
+    <div className="container">
+      <div className="contain">
+        {items.map((item) => (
+          <div key={item.id}>
+            <br></br>
+            <h5>
+              {item.qty} {item.nombre}{" "}
+            </h5>
+            <button type="button" className="btn btn-danger" onclick={() => removeItem(item.id)}>Borrar Producto</button>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 };
 
 export default Cart;
-
-    

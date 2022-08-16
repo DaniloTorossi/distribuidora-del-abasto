@@ -3,13 +3,9 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import {Link } from "react-router-dom";
-import Contador from "./Contador";
-import image from "./image/carrito.svg";
+import CartWidget from "./CartWidget";
 
 function NavBar() {
-  const onAdd = (quantity) => {
-    console.log(`Selecciono ${quantity} productos`);
-  };
   return (
     <>
       <Navbar bg="dark" variant="dark">
@@ -30,10 +26,9 @@ function NavBar() {
             </Nav.Link>
           </Nav>
         </Container>
-        <container>
-          <img src={image} className="cart" alt="carrito" />
-          <Contador initial={0} stock={10} onAdd={onAdd} />
-        </container>
+        <div>
+        <CartWidget/> 
+        </div>
       </Navbar>
       <section></section>
     </>
