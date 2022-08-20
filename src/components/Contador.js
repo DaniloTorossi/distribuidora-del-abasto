@@ -15,9 +15,9 @@ export const Contador = ({initial, stock, addItem, qty, item}) => {
   return (
     <> 
     <div className='Contador'>
-    <button disabled={count <= 0} onClick={reducir}>-</button>
+    <button className="btn btn-danger m-2" type="button" value="Submit"  disabled={count <= 0} onClick={reducir}>-</button>
     <span className='ColorContador'> Total:{ count} </span>
-    <button disabled={count >= stock} onClick={aumentar}>+</button>
+    <button className="btn btn-success m-2" type="button" value="Submit" disabled={count >= stock} onClick={aumentar}>+</button>
     <button className="btn btn-primary" type="button" disabled={stock <=0} onClick={() => addItem(item, qty)}>
     <svg
                   xmlns="http://www.w3.org/2000/svg"

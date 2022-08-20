@@ -1,10 +1,10 @@
 import React from "react";
 import { useContext } from "react";
-import { CartContex } from "../context/useContex";
+import { CartContext } from "../context/useContex";
 import cart4 from "./img/cart4.svg";
 
 const CartWidget = () => {
-  const { items } = useContext(CartContex);
+  const { items } = useContext(CartContext);
   let itemsInCart = 0;
   items.map((item) => {
     //puede ser que sea "item.Stock"

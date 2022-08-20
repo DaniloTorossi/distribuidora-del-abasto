@@ -3,13 +3,12 @@ import { useState } from "react";
 import Contador from "./Contador";
 import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { CartContex } from "../context/useContex";
+import { CartContext } from "../context/useContex";
 
 const ItemDetail = ({ item }) => {
   console.log("ItemDetail", item);
-  const [add, setAdd] = useState(false);
-  
-  const {addItem} = useContext(CartContex);
+  const [add, setAdd] = useState(false); 
+  const {addItem} = useContext(CartContext);
 
 
   return (
@@ -47,7 +46,7 @@ const ItemDetail = ({ item }) => {
                 {add ? (
                   <div className="meta">!Agregado!</div>
                 ) : (
-                  <Contador item={item} stock={10} initial={0} addItem={addItem} />
+                  <Contador item={item} stock={item.Stock} initial={0} addItem={addItem} />
                 )}
               </div>
               <div className="d-grid gap-2 d-md-block">
