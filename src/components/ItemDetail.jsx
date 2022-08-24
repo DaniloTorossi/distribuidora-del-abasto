@@ -1,15 +1,41 @@
 import React, { useContext } from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Contador from "./Contador";
 import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { CartContext } from "../context/useContex";
+import { getFirestore, doc, getDoc } from "firebase/firestore";
+
 
 const ItemDetail = ({ item }) => {
-  console.log("ItemDetail", item);
   const [add, setAdd] = useState(false); 
   const {addItem} = useContext(CartContext);
+  const [loading, setLoading] = useState([true]);
+  const [result, setResult] = useState([]);
+  const { id } = useParams();
 
+
+//Firestore itemDetail
+useEffect(() => {
+  const db = getFirestore();
+
+  //Referencia del producto a traer
+
+  const productRef = doc(db, 'items', id);
+
+  getDoc(productRef)
+  .then ((snapshot) => {
+    setResult({...snapshot.data (), id: snapshot.id});
+  })
+  .catch((error) => { 
+    console.log (error)
+  })
+  .finally(() => {
+    setLoading (false);
+  })
+
+}, [id])
 
   return (
     <>

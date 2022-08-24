@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 
 export const Contador = ({initial, stock, addItem, qty, item}) => {
-    const [count, setCount] = useState(parseInt(initial)); 
+    const [count, setCount] = useState(initial); 
     const reducir = () => {
       setCount(count - 1); 
     }

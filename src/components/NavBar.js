@@ -4,7 +4,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import {Link } from "react-router-dom";
 import CartWidget from "./CartWidget";
-
+import Categoria from "./Categoria"
 function NavBar() {
   return (
     <>
@@ -24,6 +24,7 @@ function NavBar() {
             <Nav.Link as={Link} to="Precios">
               Precios
             </Nav.Link>
+            <Categoria/>
           </Nav>
         </Container>
         <div>
