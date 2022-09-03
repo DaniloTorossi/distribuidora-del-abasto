@@ -38,7 +38,7 @@ function ItemListContainer() {
         .then((snapshot) => {
           setProductos(
             snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
-          );
+          )
         })
         .catch((error) => {
           console.log(error);

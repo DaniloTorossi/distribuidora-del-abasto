@@ -1,11 +1,12 @@
 import React from 'react'
 import {useState, useEffect} from 'react'
-import {itemsColecction, getDocs, getFirestore, onSnapshot, collection} from 'firebase/firestore';
+import { getDocs, getFirestore, collection} from 'firebase/firestore';
+import Nav from "react-bootstrap/Nav"
 import {Link} from 'react-router-dom';
 
 
 export default function Categoria() {
-    const [categorias, setCategorias]= useState ([])
+    const [categoria, setCategoria]= useState ([])
 
 useEffect(() => {
     const db = getFirestore();
@@ -13,7 +14,7 @@ useEffect(() => {
 
     getDocs(categoriaColecction)
     .then((snapshot) => {
-        console.log (snapshot.docs.map((doc) => doc.data ()))
+    setCategoria(snapshot.docs.map((doc) => doc.data ().Categoria))
     }).catch((error) => {
         console.log(error);
     });
@@ -21,7 +22,18 @@ useEffect(() => {
 
 
   return (
-    <div>Categoria</div>
+    <>
+ {/*    Este codigo deberia mapear los items del db y permitir filtrar por categoria 
+   {
+        categoria.map((el)=> (
+       <li className='nav-item' key={el}>
+           <Nav.Link to={'/Categoria/'+ el} className='nav-link'>
+           {el}
+             </Nav.Link>
+       </li>
+        ))
+      } */}
+    </>
   )
 }
 

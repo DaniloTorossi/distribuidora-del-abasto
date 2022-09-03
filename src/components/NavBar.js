@@ -15,16 +15,13 @@ function NavBar() {
             <Nav.Link as={Link} to="/">
               Home
             </Nav.Link>
-            <Nav.Link as={Link} to="Mascotas">
-              Mascotas
-            </Nav.Link>
+        {/*     <Categoria/> <-- no funciona correctamente */} 
             <Nav.Link as={Link} to="Dietetica">
               Dietetica
             </Nav.Link>
             <Nav.Link as={Link} to="Precios">
               Precios
             </Nav.Link>
-            <Categoria/>
           </Nav>
         </Container>
         <div>
