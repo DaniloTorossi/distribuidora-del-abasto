@@ -10,38 +10,7 @@ import { getFirestore, doc, getDoc, collection } from "firebase/firestore";
 const ItemDetail = ({ item }) => {
   const [add, setAdd] = useState(false);
   const { addItem } = useContext(CartContext);
-  const [loading, setLoading] = useState([true]);
-  const [result, setResult] = useState([]);
-  const { id } = useParams();
-  const { Nombre, Descripcion, Presentacion, Precio, Stock, Imagen } = item;
-
-  //Firestore itemDetail
-  useEffect(() => {
-    const db = getFirestore();
-
-    //ingreso a mi coleccion
-    const colecionProductos = collection(db, "items")
-    //Busco un producto en expecifico en mi coleccion
-    const productRef = doc(colecionProductos, id);
-    setLoading(true);
-    getDoc(productRef)
-      .then((snapshot) => {
-        //En este IF filtro productos y le digo, si existe traelo y si hay un error consologuealo.
-        if (snapshot.exists()) {
-          const data = {
-            id: snapshot.id,
-            ...snapshot.data(),
-          };
-          setResult(data);
-        }
-      })
-      .catch((error) => {
-        console.log(error);
-      })
-      .finally(() => {
-        setLoading(false);
-      });
-  }, [id]);
+  const { Nombre, Descripcion, Presentacion, Precio, Stock, Imagen, id } = item;
 
   return (
     <>
@@ -57,12 +26,12 @@ const ItemDetail = ({ item }) => {
 
               <Card.Text>
                 <div className="text-center text-primary">
-                  <h5>{Nombre} </h5>
+                  <h5>{Nombre}</h5>
                 </div>
                 <div className="col-md-12 text-center fst-italic">
-                  <p>Numero de identificacion de producto: {id}</p>
+                  <p>Numero de identificacion de producto:{id}</p>
                   <p>{Descripcion} </p>
-                  <p>Precio: ${Precio} </p>
+                  <p>Precio: ${Precio}</p>
                   <p>Stock:{Stock} unidades. </p>
                   <p>Presentacion:{Presentacion} </p>
                 </div>
