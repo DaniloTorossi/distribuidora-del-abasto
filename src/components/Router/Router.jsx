@@ -15,7 +15,8 @@ export const Router = () => {
           <Route path="/" element={<ItemListContainer />}></Route>
           <Route path="/Item/:id" element={<ItemDetailContainer />}></Route>
           <Route
-            path="/categoria/:categoria"
+          //prueba si funciona caso contrario estaba "path=/categoria/:categoria"
+            path="/Descripcion/:id"
             element={<ItemDetailContainer />}
           ></Route>
           <Route path="*" element={<ItemListContainer />}></Route>

@@ -5,7 +5,7 @@ import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { CartContext } from "../context/useContex";
-import { getFirestore, doc, getDoc } from "firebase/firestore";
+import { getFirestore, doc, getDoc, collection } from "firebase/firestore";
 
 const ItemDetail = ({ item }) => {
   const [add, setAdd] = useState(false);
@@ -19,12 +19,14 @@ const ItemDetail = ({ item }) => {
   useEffect(() => {
     const db = getFirestore();
 
-    //Referencia del producto a traer
-
-    const productRef = doc(db, "Categoria", "id");
+    //ingreso a mi coleccion
+    const colecionProductos = collection(db, "items")
+    //Busco un producto en expecifico en mi coleccion
+    const productRef = doc(colecionProductos, id);
     setLoading(true);
     getDoc(productRef)
       .then((snapshot) => {
+        //En este IF filtro productos y le digo, si existe traelo y si hay un error consologuealo.
         if (snapshot.exists()) {
           const data = {
             id: snapshot.id,

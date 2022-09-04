@@ -18,9 +18,12 @@ function ItemListContainer() {
   //Firestore
   useEffect(() => {
     const db = getFirestore();
+    //ingreso a la Base de datos y collecion de la Firebase
     const itemsColecction = collection(db, "items");
     if (id) {
+      //En la query ingreso a la coleccion y busco por categoria
       const q = query(itemsColecction, where("Categoria", "==", id));
+      //GetDocs --> Trae los docs de la query
       getDocs(q)
         .then((snapshot) => {
           setProductos(
@@ -38,7 +41,7 @@ function ItemListContainer() {
         .then((snapshot) => {
           setProductos(
             snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
-          )
+          );
         })
         .catch((error) => {
           console.log(error);
@@ -46,8 +49,8 @@ function ItemListContainer() {
     }
   }, [id]);
 
-  //Codigo para traer array de producto del json. 
- /*  const data = new Promise((resolve, reject) => {
+  //Codigo para traer array de producto del json.
+  /*  const data = new Promise((resolve, reject) => {
     let condition = true;
     setTimeout(() => {
       if (condition) {
@@ -66,9 +69,8 @@ function ItemListContainer() {
  */
   return (
     <div className="container">
-    {/*   {productos.map ((productos) => <p key={productos.id}>{productos.nombre} </p>)}  */}
+      {/*   {productos.map ((productos) => <p key={productos.id}>{productos.nombre} </p>)}  */}
       <ItemList productos={productos} />
-      
     </div>
   );
 }
