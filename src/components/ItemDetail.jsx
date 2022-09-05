@@ -1,11 +1,9 @@
 import React, { useContext } from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Contador from "./Contador";
 import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { useParams } from "react-router-dom";
 import { CartContext } from "../context/useContex";
-import { getFirestore, doc, getDoc, collection } from "firebase/firestore";
 
 const ItemDetail = ({ item }) => {
   const [add, setAdd] = useState(false);

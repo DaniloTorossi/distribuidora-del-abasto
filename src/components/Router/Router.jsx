@@ -6,6 +6,10 @@ import ItemDetailContainer from "../ItemDetailContainer";
 import ItemCart from "../ItemCart/itemCart";
 import Cart from "../Cart";
 import Categoria from "../Categoria";
+import Checkout from "../Checkout/Checkout";
+
+
+
 export const Router = () => {
   return (
     <>
@@ -22,6 +26,7 @@ export const Router = () => {
           <Route path="*" element={<ItemListContainer />}></Route>
           <Route path="/Cart/" element={<Cart/>}></Route>
           <Route path="/ItemCart" element={<ItemCart/>}></Route>
+          <Route path="/checkout" element={<Checkout/>}></Route>
         </Routes>
         <Categoria/>
       </BrowserRouter>

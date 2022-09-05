@@ -5,7 +5,7 @@ const ItemList = ({ productos }) => {
 return (
     <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap:'wrap'}}>
     {productos.map((producto) => {
-        return <Item key={producto.id} producto={producto} />;
+        return <Item key={producto.id} producto={producto} />
         })}
     </div>
     );
