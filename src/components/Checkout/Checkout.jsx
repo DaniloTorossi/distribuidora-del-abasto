@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { useCart } from "../../context/useContex";
+import Swal from "sweetalert2";
 
 const Checkout = () => {
   const [comprador, setComprador] = useState({});
@@ -12,23 +13,26 @@ const Checkout = () => {
       [e.target.name]: e.target.value,
     });
   };
-
   const finalizarCompra = (e) => {
     e.preventDefault();
-    const ventasCollection = collection(db, "ventas");
-    addDoc(ventasCollection, {
-      comprador,
-      items: items,
-      total: cartTotal(),
-      date: serverTimestamp(),
-    })
-      .then((res) => {
-        setOrderId(res.id);
-        emptyCart();
+    if (Object.values(comprador).length !== 6) {
+      //Desarrollar el Alert con SwetAlert2
+      alert("Los campos ingresados estan incompletos");
+    } else {
+      const ventasCollection = collection(db, "ventas");
+      addDoc(ventasCollection, {
+        comprador,
+        items: items,
+        total: cartTotal(),
+        date: serverTimestamp(),
       })
-      .catch((err) => console.log(err));
+        .then((res) => {
+          setOrderId(res.id);
+          emptyCart();
+        })
+        .catch((err) => console.log(err));
+    }
   };
-
   return (
     <>
       {!orderId ? (
