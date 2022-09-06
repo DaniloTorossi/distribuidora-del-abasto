@@ -7,6 +7,14 @@ const Checkout = () => {
   const [comprador, setComprador] = useState({});
   const { items, cartTotal, emptyCart } = useCart();
   const [orderId, setOrderId] = useState("");
+  const Alert = () => {
+    Swal.fire(
+      'Error',
+      'Los campos ingresados estan incompletos o son invalidos',
+      'error'
+    )
+  }
+
   const datosComprador = (e) => {
     setComprador({
       ...comprador,
@@ -15,10 +23,10 @@ const Checkout = () => {
   };
   const finalizarCompra = (e) => {
     e.preventDefault();
-    if (Object.values(comprador).length !== 6) {
-      //Desarrollar el Alert con SwetAlert2
-      alert("Los campos ingresados estan incompletos");
+    if (Object.values(comprador).length !== 4) {
+      Alert();
     } else {
+      // eslint-disable-next-line no-undef
       const ventasCollection = collection(db, "ventas");
       addDoc(ventasCollection, {
         comprador,
@@ -36,35 +44,45 @@ const Checkout = () => {
   return (
     <>
       {!orderId ? (
-        <div>
-          <h2> Checkout </h2>
-          <form onSubmit={finalizarCompra}>
-            <input
-              type="text"
-              placeholder="Nombre y apellido"
-              name="nombre"
-              onChange={datosComprador}
-            />
-            <input
-              type="text"
-              placeholder="Direccion"
-              name="Direccion"
-              onChange={datosComprador}
-            />
-            <input
-              type="number"
-              placeholder="Telefono"
-              name="Telefono"
-              onChange={datosComprador}
-            />
-            <input
-              type="text"
-              placeholder="E-mail"
-              name="E-mail"
-              onChange={datosComprador}
-            />
-            <button type="submit">Terminar Compra</button>
-          </form>
+        <div className="container-sm checkout">
+          <div>
+            <h2>Checkout </h2>
+            <form onSubmit={finalizarCompra}>
+              <div className="checkout-div">
+                <input
+                  type="text"
+                  placeholder="Nombre y apellido"
+                  name="nombre"
+                  onChange={datosComprador}
+                />
+              </div>
+              <div className="checkout-div container">
+                <input
+                  type="text"
+                  placeholder="Direccion"
+                  name="Direccion"
+                  onChange={datosComprador}
+                />
+              </div>
+              <div className="checkout-div">
+                <input
+                  type="number"
+                  placeholder="Telefono"
+                  name="Telefono"
+                  onChange={datosComprador}
+                />
+              </div>
+              <div className="checkout-div">
+                <input
+                  type="text"
+                  placeholder="E-mail"
+                  name="E-mail"
+                  onChange={datosComprador}
+                />
+              </div>
+              <button type="submit" className="btn btn-outline-success">Terminar Compra</button>
+            </form>
+          </div>
         </div>
       ) : (
         <div>

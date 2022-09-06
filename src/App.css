@@ -79,3 +79,35 @@ section {
   justify-content: center;
   min-height: 100vh;
 }
+
+.title{
+color:rgba(76, 80, 80, 0.39);
+font-size: 3rem;
+font-weight: 700;
+font-family: 'Noto Serif Telugu', serif;
+}
+
+.footer{
+background-color: black;
+font-family: 'Noto Serif Telugu', serif;
+font-size: 0.5rem;
+text-align: center;
+border-top: 5px solid rgb(201, 197, 197);
+color: white;
+}
+
+.checkout{
+  color:rgba(76, 80, 80, 0.39);
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: 'Noto Serif Telugu', serif;
+  padding: 10px;
+}
+
+.checkout-div{
+color:black;
+font-size: 1.2rem;
+padding: 5px;
+background-color:rgb(201, 197, 197) ;
+
+}

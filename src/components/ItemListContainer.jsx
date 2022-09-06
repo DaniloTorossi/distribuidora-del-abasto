@@ -68,9 +68,24 @@ function ItemListContainer() {
   }, []);
  */
   return (
-    <div className="container">
-      {/*   {productos.map ((productos) => <p key={productos.id}>{productos.nombre} </p>)}  */}
-      <ItemList productos={productos} />
+    <div className="container-fluid">
+      <div className="container">
+        <div className="row">
+          <div className="col-10">
+            <h1 className="title">Alimentos balanceados</h1>
+            <ItemList productos={productos} />
+          </div>
+        </div>
+      </div>
+      <section>
+        <footer className="position-relative bottom-0 end-0 footer">
+          <h3> Contacto </h3>
+          <h5>Direccion: Salta 326, Alvarez</h5>
+          <h5>Horario: L a V 09:00 a 18:00Hrs.</h5>
+          <h5>Telefono: 0342-155449912</h5>
+          <h5>Correo: distribuidoradelabasto@outlook.com</h5>
+        </footer>
+      </section>
     </div>
   );
 }

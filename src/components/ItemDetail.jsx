@@ -6,9 +6,10 @@ import { Link } from "react-router-dom";
 import { CartContext } from "../context/useContex";
 
 const ItemDetail = ({ item }) => {
+  console.log(ItemDetail, "item");
   const [add, setAdd] = useState(false);
   const { addItem } = useContext(CartContext);
-  const { Nombre, Descripcion, Presentacion, Precio, Stock, Imagen, id } = item;
+  const {Nombre, Descripcion, id, Stock, Precio, Presentacion, Imagen} = item;
 
   return (
     <>
