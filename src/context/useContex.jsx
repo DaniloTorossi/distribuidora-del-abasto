@@ -44,7 +44,7 @@ export const CartProvider = ({ children }) => {
   };
 
   const cartTotal = () => {
-    return items.reduce((acc, prod) => (acc += prod.Precio * prod.Stock), 0);
+    return items.reduce((acc, prod) => acc += prod.precio * prod.qty, 0);
   };
 
   return (

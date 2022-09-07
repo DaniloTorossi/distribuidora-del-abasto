@@ -31,7 +31,6 @@ export const ItemCart = () => {
        </div>
        <span> Total a pagar: ${cartTotal ()}</span>
        <div>
-     {/*   falta desarrollar la ruta 'checkout'. La misma deberia llevar a un link de pago */}
         <button className='btn btn-success' onClick={()=>navegar('/checkout')}>Terminar compra</button>
         <button className='btn btn-danger' onClick={emptyCart}>Vaciar carrito</button>
       </div>
