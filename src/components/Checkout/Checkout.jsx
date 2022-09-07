@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { useCart } from "../../context/useContex";
+import { db } from "../Firebase/Firebase";
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const Checkout = () => {
@@ -9,11 +11,11 @@ const Checkout = () => {
   const [orderId, setOrderId] = useState("");
   const Alert = () => {
     Swal.fire(
-      'Error',
-      'Los campos ingresados estan incompletos o son invalidos',
-      'error'
-    )
-  }
+      "Error",
+      "Los campos ingresados estan incompletos o son invalidos",
+      "error"
+    );
+  };
 
   const datosComprador = (e) => {
     setComprador({
@@ -26,7 +28,6 @@ const Checkout = () => {
     if (Object.values(comprador).length !== 4) {
       Alert();
     } else {
-      // eslint-disable-next-line no-undef
       const ventasCollection = collection(db, "ventas");
       addDoc(ventasCollection, {
         comprador,
@@ -80,7 +81,9 @@ const Checkout = () => {
                   onChange={datosComprador}
                 />
               </div>
-              <button type="submit" className="btn btn-outline-success">Terminar Compra</button>
+              <button type="submit" className="btn btn-outline-success">
+                Terminar Compra
+              </button>
             </form>
           </div>
         </div>
@@ -88,7 +91,9 @@ const Checkout = () => {
         <div>
           <h3>Muchas Gracias por su compra!</h3>
           <h4>Su pedido es el numero: {orderId}</h4>
-          <button>Volver al inicio</button>
+          <Link className="btn btn-success" to="/ItemListContainer">
+            Volver al inicio
+          </Link>
         </div>
       )}
     </>
