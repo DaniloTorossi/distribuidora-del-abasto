@@ -1,16 +1,14 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 
 export const Contador = ({initial, stock, addItem, qty, item}) => {
     const [count, setCount] = useState(initial); 
-    const reducir = () => {
-      setCount(count - 1); 
-    }
+ 
     const aumentar = () => {
       setCount(count + 1); 
     }
-
-    useEffect(() => {
-      setCount(parseInt(initial));}, [initial]);
+    const reducir = () => {
+      setCount(count - 1); 
+    }
 
   return (
     <> 

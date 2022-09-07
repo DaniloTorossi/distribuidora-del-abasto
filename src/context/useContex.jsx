@@ -4,9 +4,9 @@ export const CartContext = createContext([]);
 
 export const CartProvider = ({ children }) => {
   const [items, setItems] = useState([]);
-  //ingresa al carrito <-- esta funcion no esta andando correctamente
-  const isInCart = (id) => {
-    const found = items.find((items) => items.id === id);
+
+  const isInCart = (item) => {
+    const found = items.find((prod) => prod.id === item.id);
     return found;
   };
   //recibe item y cantidad de objetos a agregar al carrito
@@ -26,12 +26,13 @@ export const CartProvider = ({ children }) => {
             id: item.id,
             nombre: item.Nombre,
             precio: item.Precio,
-            qty: item.Stock,
+            stock: item.Stock,
+            qty: qty,
           },
         ]);
   };
-  const removeItem = (prod) => {
-    setItems(items.filter((items) => items.id !== prod.id));
+  const removeItem = (id) => {
+    setItems(items.filter((items) => items.id !== id));
   };
 
   const emptyCart = () => {
@@ -39,7 +40,7 @@ export const CartProvider = ({ children }) => {
 }
 
   const cartQuantity = () => {
-    return items.reduce((acc, prod) => (acc += prod.Stock), 0);
+    return items.reduce((acc, prod) => acc += prod.precio * prod.qty, 0);
   };
 
   const cartTotal = () => {

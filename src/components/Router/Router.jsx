@@ -21,7 +21,7 @@ export const Router = () => {
           <Route
           //prueba si funciona caso contrario estaba "path=/categoria/:categoria"
             path="/Descripcion/:id"
-            element={<ItemDetailContainer />}
+            element={ <ItemListContainer />}
           ></Route>
           <Route path="*" element={<ItemListContainer />}></Route>
           <Route path="/Cart/" element={<Cart/>}></Route>

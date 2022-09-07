@@ -1,8 +1,7 @@
 import React from 'react'
 import {useState, useEffect} from 'react'
 import { getDocs, getFirestore, collection} from 'firebase/firestore';
-import Nav from "react-bootstrap/Nav"
-import {Link} from 'react-router-dom';
+
 
 
 export default function Categoria() {
@@ -10,8 +9,7 @@ export default function Categoria() {
 
 useEffect(() => {
     const db = getFirestore();
-    const categoriaColecction =  collection(db, 'items');
-
+    const categoriaColecction =  collection(db, 'Categoria');
     getDocs(categoriaColecction)
     .then((snapshot) => {
     setCategoria(snapshot.docs.map((doc) => doc.data ().Categoria))
