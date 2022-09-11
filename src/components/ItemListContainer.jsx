@@ -12,7 +12,6 @@ import { db } from "../components/Firebase/Firebase"
 
 function ItemListContainer() {
   const [productos, setProductos] = useState([]);
-  const [loading, setLoading] = useState([true]);
   const { id } = useParams();
 
   //Firestore
