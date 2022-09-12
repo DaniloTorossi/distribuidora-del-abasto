@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/distribuidora-del-abasto/static/css/main.c789fc5b.css",
+    "main.js": "/distribuidora-del-abasto/static/js/main.a79b441c.js",
+    "static/js/787.b1d96a34.chunk.js": "/distribuidora-del-abasto/static/js/787.b1d96a34.chunk.js",
+    "index.html": "/distribuidora-del-abasto/index.html",
+    "static/media/cart4.svg": "/distribuidora-del-abasto/static/media/cart4.957ad81acf2afa91bffa61c1545906bc.svg",
+    "main.c789fc5b.css.map": "/distribuidora-del-abasto/static/css/main.c789fc5b.css.map",
+    "main.a79b441c.js.map": "/distribuidora-del-abasto/static/js/main.a79b441c.js.map",
+    "787.b1d96a34.chunk.js.map": "/distribuidora-del-abasto/static/js/787.b1d96a34.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c789fc5b.css",
+    "static/js/main.a79b441c.js"
+  ]
+}

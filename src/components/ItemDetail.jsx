@@ -54,7 +54,7 @@ const ItemDetail = ({ item }) => {
                 )}
               </div>
               <div className="d-grid gap-2 d-md-block">
-                <Link to="/Cart" className="btn btn-success btn-lg ">
+                <Link to="/Cart" className="btn btn-success mt-2">
                   Finalizar compra
                 </Link>
               </div>

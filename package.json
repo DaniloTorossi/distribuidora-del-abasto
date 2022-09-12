@@ -1,5 +1,6 @@
 {
   "name": "distribuidora-del-abasto",
+  "homepage":"https://danilotorossi.github.io/distribuidora-del-abasto/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
